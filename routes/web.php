@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// route to show the login form
+Route::get('login', array('uses' => 'Auth\LoginController@showLogin'));
+
+// route to process the form
+Route::post('login', array('uses' => 'HomeController@doLogin'));
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
