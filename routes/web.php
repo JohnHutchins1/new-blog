@@ -11,9 +11,15 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+//checks if the user is logged in, then sends them to the home page if not previouisly logged out
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->intended('home');
 });
+
 
 // route to show the login form
 Route::get('login', array('uses' => 'Auth\LoginController@showLogin'));
