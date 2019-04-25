@@ -11,21 +11,24 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
-//checks if the user is logged in, then sends them to the home page if not previouisly logged out
 Route::get('/', function () {
-    return redirect()->intended('home');
+    return view('main');
 });
 
+Route::get('/places', 'HomeController@places')->name('places');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
-// route to show the login form
-Route::get('login', array('uses' => 'Auth\LoginController@showLogin'));
+//checks if the user is logged in, then sends them to the home page if not previouisly logged out
+// Route::get('/', function () {
+//     return redirect()->intended('home');
+// });
 
-// route to process the form
+
+// // route to show the login form
+// Route::get('login', array('uses' => 'Auth\LoginController@showLogin'));
+
+// // route to process the form
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

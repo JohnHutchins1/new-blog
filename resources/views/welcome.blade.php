@@ -1,3 +1,8 @@
+<!--    
+    Default localhost:8000 page that came with project
+
+-->
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
