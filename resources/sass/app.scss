@@ -2,11 +2,16 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
+// Variables \\
 @import 'variables';
-@import 'custom';
-@import 'footer';
-@import 'navbar';
+
+//page sass files
+@import 'pages/places';
+@import 'pages/custom';
+
+//includes sass files
+@import 'includes/footer';
+@import 'includes/navbar';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';

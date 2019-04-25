@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/places', 'HomeController@places')->name('places');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/about', 'HomeController@about')->name('about');
 
 //checks if the user is logged in, then sends them to the home page if not previouisly logged out
 // Route::get('/', function () {
