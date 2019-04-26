@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
 
-Route::get('/places', 'HomeController@places')->name('places');
+
+Route::get('/', 'HomeController@index')->name('main');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/about', 'HomeController@about')->name('about');
+Route::resource('places', 'ImageController');
+
 
 //checks if the user is logged in, then sends them to the home page if not previouisly logged out
 // Route::get('/', function () {
@@ -32,4 +32,4 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::post('login', array('uses' => 'HomeController@doLogin'));
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+

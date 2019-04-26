@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.noscroll')
 
 @section('content')
 <div class="container">
@@ -45,3 +45,9 @@
     </div>
 </div>
 @endsection
+
+
+<div class = "fixed-bottom mt-2">
+    @include('includes.footer')
+</div>
+    

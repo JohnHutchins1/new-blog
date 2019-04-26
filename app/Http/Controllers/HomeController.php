@@ -26,11 +26,6 @@ class HomeController extends Controller
         return view('main');
     }
 
-    public function places()
-    {
-        return view('pages.places');
-    }
-
     public function contact()
     {
         return view('pages.contact');

@@ -12,3 +12,54 @@
     height: 25vh;
 
 }
+
+.top-left {
+    position: absolute;
+    top: 1px;
+    left: 16px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 5px;
+    left: 16px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.card-p {
+    opacity: 0;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+ 
+.hover-effect p, .hover-effect button{
+    opacity: 0;
+    transition:opacity 0.2s linear, margin 0.2s linear;
+    color: #ffffff;
+   
+}
+
+.hover-effect button{
+
+    color: black;
+}
+.hover-effect:hover p, .hover-effect:hover button{
+    opacity: 1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.hover-effect:hover{
+    cursor: pointer;
+}
