@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\UserPictures;
 use Illuminate\Http\Request;
-use App\Image;
+use Illuminate\Support\Facades\Auth;
 
-class ImageController extends Controller
+
+class UserPicturesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::all();    
-        return view('pages.places')->with('images', $images);
+        //
     }
 
     /**
@@ -36,16 +38,26 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $message = "ERROR!!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+
+        $userPictures = new UserPictures;
+        $userPictures->user_id = 1;
+        $userPictures->img_id = 1;
+        $userPictures->added_on = Carbon::now();
+        $userPictures->save();
         
+        return response()->json(['success'=>'Got Simple Ajax Request.']);
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\UserPictures  $userPictures
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(UserPictures $userPictures)
     {
         //
     }
@@ -53,10 +65,10 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\UserPictures  $userPictures
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(UserPictures $userPictures)
     {
         //
     }
@@ -65,10 +77,10 @@ class ImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\UserPictures  $userPictures
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, UserPictures $userPictures)
     {
         //
     }
@@ -76,10 +88,10 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\UserPictures  $userPictures
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(UserPictures $userPictures)
     {
         //
     }

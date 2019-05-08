@@ -24,18 +24,18 @@
                         <img class="card-img-top rounded" src="{{ asset('assets/'. $image->path) }}">
                         <p class = "top-left text-white card-p">{{$image->location}}</p>
 
-
                         <div class = "bottom-right hover-effect">
-                            <button type="button" class="btn btn-light border-0" onclick="">
+                            
+                            <button type="button" class="btn btn-light border-0 btn-submit" name = "add" id="{{$image->id}}">
                                 <span>&#43; Add</span>
                             </button>   
+                            
                         </div>
                     </div>
                 @endforeach
             @endif
         </div>
     </div>
-   
-
 
 @endsection
+

@@ -16,7 +16,14 @@
 Route::get('/', 'HomeController@index')->name('main');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/about', 'HomeController@about')->name('about');
-Route::resource('places', 'ImageController');
+
+
+
+Route::get('places', 'ImageController@index');
+Route::post('places', 'UserPicturesController@store');
+
+//Route::resource('places', 'UserPicturesController');
+
 
 
 //checks if the user is logged in, then sends them to the home page if not previouisly logged out
