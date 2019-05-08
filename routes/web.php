@@ -19,6 +19,7 @@ Route::get('/about', 'HomeController@about')->name('about');
 
 
 
+
 Route::get('places', 'ImageController@index');
 Route::post('places', 'UserPicturesController@store');
 
